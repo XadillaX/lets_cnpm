@@ -36,6 +36,20 @@ Windows 用户也可以用类似 [Cygwin](https://www.cygwin.com/)、[MinGW](htt
 
 下载完毕后将文件夹解压到相应目录即可。
 
+### 安装依赖
+
+安装依赖其实就是一个 `npm install`，不过 CNPM 把该指令已经写到 Makefile 里面了，所以直接执行下面的命令就好了。
+
+```sh
+$ make install
+```
+
+当然万一你是 Windows 用户或者不会 `make`，那么还是要用 `npm install`。
+
+```sh
+$ npm install --build-from-source --registry=https://registry.npm.taobao.org --disturl=https://npm.taobao.org/mirrors/node
+```
+
 ### 修改配置文件
 
 新建一份 `config/config.js` 文件，并且写入如下的骨架：
@@ -152,3 +166,29 @@ module.exports = {
 + [oss-cnpm](https://github.com/cnpm/oss-cnpm)：包本体存在阿里云 OSS 的插件。
 
 以后官方如果有一些新的插件进来，这里可能不会更新了，请自行去 [NFS Storage Wrappers](https://github.com/cnpm/cnpmjs.org/wiki/NFS-Guide#present-storage-wrappers) 获取最新的 NFS 插件们。
+
+### 启动服务
+
+搞好配置之后就可以直接启动服务了。
+
+最简单的办法也是我现在正在用的方法就是直接用 `node` 执行一下入口文件就好了。
+
+```sh
+$ node dispatch.js
+```
+
+> 其实我是在 [tmux](https://tmux.github.io/) 里面执行上面的指令的。
+
+官方的其它一些指令，比如你可以用 NPM 的 script 来运行。
+
+```sh
+$ npm run start
+```
+
+> 在 CNPM 里面，npm script 还有下面几种指令
+>
+> + `npm run dev`：调试模式启动；
+> + `npm run test`：跑测试；
+> + `npm run start`：启动 CNPM；
+> + `npm run status`：查看 CNPM 启动状态；
+> + `npm run stop`：停止 CNPM。
