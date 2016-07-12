@@ -1,4 +1,4 @@
-# 前言
+# 关于本系列
 
 本系列文章将会基于 [cnpm](https://github.com/cnpm/cnpmjs.org) 部署搭建一套属于自己（或者公司）的内部私有 NPM 系统。
 
