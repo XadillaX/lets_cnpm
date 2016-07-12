@@ -141,3 +141,12 @@ module.exports = {
 >
 > 这个时候你的 `package.json` 就有更改与源 Repo 不一致了，如果是 Git 克隆的用户在以后升级更新系统的时候稍稍注意一下可能的冲突即可。
 
+#### 官方 NFS 插件
+
+下面给出几个官方的 NFS 插件：
+
++ [upyun-cnpm](https://github.com/cnpm/upyun-cnpm)：包本体存在又拍云的插件；
++ [fs-cnpm](https://github.com/cnpm/fs-cnpm)：包本体存在本地的插件；
++ [sfs-client](https://github.com/cnpm/sfs-client)：包本体存在 [SFS](https://github.com/cnpm/sfs)（Simple FIle Store）插件；
++ [qn-cnpm](https://github.com/cnpm/qn-cnpm)：包本体存在七牛的插件；
++ [oss-cnpm](https://github.com/cnpm/oss-cnpm)：包本体存在阿里云 OSS 的插件。
