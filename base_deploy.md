@@ -167,6 +167,22 @@ module.exports = {
 
 以后官方如果有一些新的插件进来，这里可能不会更新了，请自行去 [NFS Storage Wrappers](https://github.com/cnpm/cnpmjs.org/wiki/NFS-Guide#present-storage-wrappers) 获取最新的 NFS 插件们。
 
+### 初始化数据库
+
+如果你使用的是 SQLite 的话，数据库是自动就好了的，可以忽略该步。
+
+其它数据库需要自行导入初始数据库结构。
+
+初始数据库脚本在 **docs/db.sql** 里面，你可以用一些 GUI 工具将数据导入，也可以直接进入命令行导入。
+
+比如你用的是 MySQL，就可以在本机操作 MySQL。
+
+```sh
+$ mysql -u yourname -p
+mysql> use cnpmjs;
+mysql> source docs/db.sql
+```
+
 ### 启动服务
 
 搞好配置之后就可以直接启动服务了。
