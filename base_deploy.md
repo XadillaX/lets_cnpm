@@ -150,3 +150,5 @@ module.exports = {
 + [sfs-client](https://github.com/cnpm/sfs-client)：包本体存在 [SFS](https://github.com/cnpm/sfs)（Simple FIle Store）插件；
 + [qn-cnpm](https://github.com/cnpm/qn-cnpm)：包本体存在七牛的插件；
 + [oss-cnpm](https://github.com/cnpm/oss-cnpm)：包本体存在阿里云 OSS 的插件。
+
+以后官方如果有一些新的插件进来，这里可能不会更新了，请自行去 [NFS Storage Wrappers](https://github.com/cnpm/cnpmjs.org/wiki/NFS-Guide#present-storage-wrappers) 获取最新的 NFS 插件们。
