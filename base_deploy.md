@@ -101,3 +101,43 @@ module.exports = {
 + `userService`：用户验证接口，默认为 `null`，即无用户相关功能也就是无法有用户去上传包，该部分需要自己实现接口功能并配置，如与公司的 **Gitlab** 相对接，这也是后话了；
 + `alwaysAuth`：是否始终需要用户验证，即便是 `$ cnpm install` 等命令；
 + `httpProxy`：代理地址设置，用于你在墙内源站在墙外的情况。
+
+#### 一个可能的配置
+
+下面给出一个样例配置：
+
+```js
+module.exports = {
+    enableCluster: true,
+    database: {
+        db: "snpm",
+        username: "username",
+        password: "password",
+
+        dialect: "mysql",
+        host: "127.0.0.1",
+        port: 3306
+    },
+    enablePrivate: false,
+    admins: {
+        xadillax: "i@2333.moe"
+    },
+    syncModel: "exist",
+    nfs: require('upyun-cnpm').create({
+        bucket: "your bucket",
+        oprator: "your id",
+        password: "your secret"
+    }),
+    scopes: [ '@cheniu', '@souche', '@souche-f2e' ],
+    badgeSubject: 'snpm',
+    privatePackages: [ 'snpm' ]
+};
+```
+
+> 上面的配置包文件系统层用的是 [upyun-cnpm](https://github.com/cnpm/upyun-cnpm) 插件，需要在 CNPM 源码根目录执行
+> ```sh
+> $ npm install --save -d upyun-cnpm
+> ```
+>
+> 这个时候你的 `package.json` 就有更改与源 Repo 不一致了，如果是 Git 克隆的用户在以后升级更新系统的时候稍稍注意一下可能的冲突即可。
+
